@@ -1,13 +1,13 @@
 #! /bin/sh
 
 # Define working directory
-WU=$HOME/.local/apps/yuros/lib/writesup/
+WU=$HOME/.local/apps/writesup/lib
 
 # Include library
 source $WU/banner.sh
-source $WU/local-server.sh
-source $WU/github-tools.sh
-source $WU/new-post.sh
+source $WU/server.sh
+source $WU/github.sh
+source $WU/post.sh
 
 ## Main function
 function wrup_app_init() {
@@ -47,7 +47,7 @@ function wrup_app_init() {
 				exit;;
 			 *)
 				read -p "Invalid Argument, press any key to continue" main;
-				wrupwrup_app_init;;
+				wrup_app_init;;
 		esac
 	done
 }
