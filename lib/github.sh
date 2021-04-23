@@ -19,20 +19,27 @@
 
 #Github content + core push function 
  function wrup_push_all_github() {
+#clear old content
+	rm -fr public/*;
+	rm -fr ../published/*;
+	#Generate content
 	hugo ;
+	cp -fr public/* ../published;
+	#Commit input
 	echo "insert initial commit :"
 	read initialcom;
-	# core update
-	git add .;
+	# engine update
+	git add . ;
 	git commit -m "$initialcom";
-	git push -u origin main;
+	git push -u origin local;
 	# content update
-	cd public;
+	cd ../published;
 	git add .;
 	git commit -m "$initialcom";
+	git config credential.helper store;
 	git push -u origin master;
+	cd ../engine;
 	# back to parrent 	directory
-	cd ..;
 }
 
 # Github core pull function
