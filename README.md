@@ -5,5 +5,5 @@ Hugo Interactive CLI Tools
 
 Edit .`bashrc` file on your home directory, add this line on your `.bashrc` file
 ```
-source ~/.local/apps/writesup/writesup.sh
+source ~/.local/apps/writesup/wu.sh
 ```
